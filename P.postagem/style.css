@@ -1,0 +1,152 @@
+body {
+    font-family: sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    font-size: 30px;
+    color: #727272;
+    background-color: #4FA088;
+    padding: 10px;
+    align-items: center;
+}
+
+.perfil {
+    background-color: #D9D9D9;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    margin-left: auto;
+}
+
+.perfil h5 {
+    margin: auto;
+}
+
+.perfName {
+    font-weight: normal;
+}
+
+.menu {
+    background-color: #4FA088;
+    height: calc(100% - 60px); /* Subtrai a altura do header */
+    position: fixed;
+    top: 60px; /* Altura do header */
+    left: 0;
+    width: 150px; /* Aumenta a largura do menu */
+    overflow: auto; /* Permite rolar se o conteúdo for maior que a altura */
+    z-index: 1; /* Adiciona um índice Z para ficar acima da borda */
+    border-right: 1px solid #ccc; /* Adiciona uma borda à direita */
+}
+
+main {
+    padding: 20px;
+    margin-left: 150px; /* Ajusta conforme a largura do menu */
+    height: calc(100vh - 60px); /* Subtrai a altura do header */
+    background-color: #F0F8F4;
+    overflow: auto; /* Adiciona rolagem para o conteúdo principal */
+}
+
+.post-section {
+    background-color: #F0F8F4;
+    padding: 20px;
+    border-radius: 10px;
+    width: calc(100% - 180px); /* Ajusta a largura para compensar a borda esquerda */
+    height: calc(100% - 60px); /* Subtrai a altura do header */
+    border-left: 10px solid #D9D9D9; /* Definir a largura da borda esquerda */
+    border-top: 10px solid #D9D9D9; /* Definir a largura da borda superior */
+    overflow: auto; /* Adiciona rolagem interna para o conteúdo */
+    margin-left: -10px; /* Ajustar para que a borda toque a borda cinza */
+    margin-top: -20px; /* Ajustar para que a borda toque a borda cinza */
+    margin-bottom: -20px; /* Ajustar para que a borda toque a borda inferior */
+}
+
+.lista-geral {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.lista {
+    background-color: #D9D9D9;
+    padding: 10px;
+    margin: 10px 0;
+    list-style: none;
+    border-radius: 5px;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+}
+
+.post-section h3 {
+    color: #4FA088;
+    font-size: 24px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.post-section h3::before {
+    content: "\f02e"; /* Código unicode do ícone */
+    font-family: 'Phosphor'; /* Nome da fonte de ícones */
+    font-size: 30px;
+    color: #4FA088;
+    margin-right: 10px;
+}
+
+.post-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 50px;
+    height: 3px;
+    background-color: #4FA088;
+    transform: translateX(-50%);
+}
+
+.form-post {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-post input, .form-post textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.form-post button {
+    background-color: #4FA088;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+}
+
+.form-post button:hover {
+    background-color: #388073;
+}
+
+.posts-list {
+    margin-top: 30px;
+}
+
+.post-item {
+    background-color: #D9D9D9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+}

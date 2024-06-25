@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Postagens</title>
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="perfil">
+      <i class="ph ph-user-circle"></i>
+      <h5 class="perfName">PERFIL</h5>
+    </div>
+  </header>
+
+  <aside class="menu">
+    <ul class="lista-geral">
+      <li class="lista">Perfil</li>
+      <li class="lista">Consulta</li>
+      <li class="lista">Calendário</li>
+      <li class="lista">Pagamentos</li>
+      <li class="lista">Suporte</li>
+      <li class="lista">Postagens</li>
+    </ul>
+  </aside>
+
+  <main>
+    <section class="post-section">
+      <h3>Nova Postagem</h3>
+      <form class="form-post" id="postForm">
+        <input type="text" name="title" placeholder="Título da Postagem" required />
+        <textarea name="content" placeholder="Conteúdo da Postagem" rows="5" required></textarea>
+        <button type="submit">Publicar</button>
+      </form>
+      
+      <div class="posts-list" id="postsList">
+        <!-- As postagens serão inseridas aqui -->
+      </div>
+    </section>
+    
+  </main>
+
+  <script>
+    const postForm = document.getElementById('postForm');
+    const postsList = document.getElementById('postsList');
+
+    postForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const postData = {
+            title: postForm.querySelector('input[name="title"]').value,
+            content: postForm.querySelector('textarea[name="content"]').value,
+        };
+
+        // Simula o envio para o servidor e atualização da lista de postagens
+        const postItem = document.createElement('div');
+        postItem.classList.add('post-item');
+        postItem.innerHTML = `<h4>${postData.title}</h4><p>${postData.content}</p>`;
+        postsList.appendChild(postItem);
+
+        // Limpar o formulário
+        postForm.reset();
+
+        console.log(JSON.stringify(postData));
+    });
+  </script>
+ 
+</body>
+
+</html>
